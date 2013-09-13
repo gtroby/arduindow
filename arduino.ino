@@ -169,6 +169,9 @@ int request()
     i++;
   }
 
+  if (i > DIM_BUFFER - 1)
+    return 1;
+
   valore_letto = 10 * (buffer[i] - '0') + (buffer[i + 1] - '0');
 
   // TODO: maybe use snprintf()?
