@@ -1,17 +1,17 @@
 /*-
- * Arduindow - Opens and closes the windows in your house
- * using an Arduino and open weather data.
- *
- * Team:
- *     Erica Raviola (iOS)
- *     Flavio Giobergia (APIs)
- *     Roberto Gambotto (Arduino)
- *     Simone Basso (sandwiches)
- *
- * Homepage: <https://github.com/bassosimone/arduindow>.
- *
- * See LICENSE for license conditions.
- */
+* Arduindow - Opens and closes the windows in your house
+* using an Arduino and open weather data.
+*
+* Team:
+* Erica Raviola (iOS)
+* Flavio Giobergia (APIs)
+* Roberto Gambotto (Arduino)
+* Simone Basso (sandwiches)
+*
+* Homepage: <https://github.com/bassosimone/arduindow>.
+*
+* See LICENSE for license conditions.
+*/
 
 #include <SPI.h>
 #include <Ethernet.h>
@@ -36,7 +36,7 @@ IPAddress gateway(192, 168, 0, 1);
 //
 // The HTTP request that we will send to the server
 //
-char richiesta[] = "GET /arduindow/1.0/stats/open_close_window HTTP/1.0";
+char http_request[] = "GET /arduindow/1.0/stats/open_close_window HTTP/1.0";
 
 //
 // The delay between two requests of update
@@ -59,18 +59,18 @@ EthernetClient client;
 char buffer[DIM_BUFFER + 1];
 int n = 0,
     dim,
-    valore_letto;
+    read_value;
 
 //
 // Define the Arduino's pins
 //
 const int led = 3,
-          motore = 5;
+          servo = 5;
 
 void setup()
 {
   pinMode(led, OUTPUT);
-  pinMode(motore, OUTPUT);
+  pinMode(servo, OUTPUT);
 
   Serial.begin(9600);
   Serial.print("Starting serial monitor...\n");
@@ -95,7 +95,7 @@ void loop()
     //
     // Send the request to the server
     //
-    client.println(richiesta);
+    client.println(http_request);
     client.println();
     client.flush();
 
@@ -137,11 +137,7 @@ int request()
     }
   } while(continua);
 
-  //
-  // Don't bother checking, when the string we
-  // read from the server is too short.
-  //
-  if (i < 13)
+  if(i < 13)
     return 1;
 
   dim = i;
@@ -150,33 +146,36 @@ int request()
 
   if (memcmp(buffer, "HTTP/1.1 200", 12))
     return 1;
-
+    
   //
   // Quickly skip a the end of the request headers, by
   // looking for [\r\n]{4}. We assume that the server
   // is not using the non-standard LFLF terminator for
   // the headers, which is a sound assumption.
   //
+
   continua = 1;
   n = 0;
-  while (continua) {
+  while(continua) {
     if (buffer[i] == '\n' || buffer[i] == '\r')
       n++;
     else
       n = 0;
-    if (n == 4 || i == DIM_BUFFER)
-      continua = 0;
+    if(n == 4 || i == DIM_BUFFER)
+      continua=0;
     i++;
   }
 
-  valore_letto = 10 * (buffer[i] - '0') + (buffer[i + 1] - '0');
+  if(i>DIM_BUFFER-1) return 1;
+  
+  read_value = 10 * (buffer[i] - '0') + (buffer[i + 1] - '0');
 
   // TODO: maybe use snprintf()?
-  sprintf(stringa, "Value read: %d\n", valore_letto);
+  sprintf(stringa, "Value read: %d\n", read_value);
   Serial.print(stringa);
 
   digitalWrite(led, LOW);
-  analogWrite(motore, valore_letto * 2.55);
+  analogWrite(servo, read_value * 2.55);
 
   return 0;
 }
