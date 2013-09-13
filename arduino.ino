@@ -137,7 +137,11 @@ int request()
     }
   } while(continua);
 
-  if(i < 13)
+  //
+  // Don't bother checking, when the string we
+  // read from the server is too short.
+  //
+  if (i < 13)
     return 1;
 
   dim = i;
@@ -149,12 +153,12 @@ int request()
 
   continua = 1;
   n = 0;
-  while(continua) {
+  while (continua) {
     if (buffer[i] == '\n' || buffer[i] == '\r')
       n++;
     else
       n = 0;
-    if(n == 4 || i == DIM_BUFFER)
+    if (n == 4 || i == DIM_BUFFER)
       continua=0;
     i++;
   }
