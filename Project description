@@ -1,0 +1,10 @@
+Arduindow utilizza le informazioni meteo esportate dalla piattaforma OpenDAI e Arduino per pilotare l’apertura delle
+finestre in caso di bel tempo e la loro chiusura in caso di pioggia. 
+
+Arduindow si basa su un server casalingo che prende le API meteo esportate da OpenDAI e le prepara, riorganizza e
+semplifica per poi passare il testimone ad Arduino.
+
+Proposta: In turn the software written for Arduino periodically queries the simplified API and controls the windows.
+
+Il progetto integra, inoltre, un’App per iPhone che permette l’interazione manuale da parte dell’utente.
+Una configurazione di pochi secondi, permette di prepararei Arduino a ricevere le informazioni meteo e agire di conseguenza.
