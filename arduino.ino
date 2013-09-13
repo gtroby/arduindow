@@ -159,7 +159,7 @@ int request()
     else
       n = 0;
     if (n == 4 || i == DIM_BUFFER)
-      continua=0;
+      continua = 0;
     i++;
   }
 
