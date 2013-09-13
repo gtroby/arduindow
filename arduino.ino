@@ -151,6 +151,12 @@ int request()
   if (memcmp(buffer, "HTTP/1.1 200", 12))
     return 1;
 
+  //
+  // Quickly skip a the end of the request headers, by
+  // looking for [\r\n]{4}. We assume that the server
+  // is not using the non-standard LFLF terminator for
+  // the headers, which is a sound assumption.
+  //
   continua = 1;
   n = 0;
   while (continua) {
