@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44A8310A17A4F06900F3E7C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A8310917A4F06900F3E7C6 /* UIKit.framework */; };
+		44A8310C17A4F06900F3E7C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A8310B17A4F06900F3E7C6 /* Foundation.framework */; };
+		44A8310E17A4F06900F3E7C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A8310D17A4F06900F3E7C6 /* CoreGraphics.framework */; };
+		44A8311417A4F06900F3E7C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44A8311217A4F06900F3E7C6 /* InfoPlist.strings */; };
+		44A8311617A4F06900F3E7C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A8311517A4F06900F3E7C6 /* main.m */; };
+		44A8311A17A4F06900F3E7C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A8311917A4F06900F3E7C6 /* AppDelegate.m */; };
+		44A8311C17A4F06900F3E7C6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A8311B17A4F06900F3E7C6 /* Default.png */; };
+		44A8311E17A4F06900F3E7C6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A8311D17A4F06900F3E7C6 /* Default@2x.png */; };
+		44A8312017A4F06900F3E7C6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A8311F17A4F06900F3E7C6 /* Default-568h@2x.png */; };
+		44A8312317A4F06900F3E7C6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A8312117A4F06900F3E7C6 /* MainStoryboard.storyboard */; };
+		44B4666117A6998600FE30F7 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4664F17A6998600FE30F7 /* AFHTTPClient.m */; };
+		44B4666217A6998600FE30F7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665117A6998600FE30F7 /* AFHTTPRequestOperation.m */; };
+		44B4666317A6998600FE30F7 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665317A6998600FE30F7 /* AFImageRequestOperation.m */; };
+		44B4666417A6998600FE30F7 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665517A6998600FE30F7 /* AFJSONRequestOperation.m */; };
+		44B4666517A6998600FE30F7 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665717A6998600FE30F7 /* AFNetworkActivityIndicatorManager.m */; };
+		44B4666617A6998600FE30F7 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665A17A6998600FE30F7 /* AFPropertyListRequestOperation.m */; };
+		44B4666717A6998600FE30F7 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665C17A6998600FE30F7 /* AFURLConnectionOperation.m */; };
+		44B4666817A6998600FE30F7 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4665E17A6998600FE30F7 /* AFXMLRequestOperation.m */; };
+		44B4666917A6998600FE30F7 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4666017A6998600FE30F7 /* UIImageView+AFNetworking.m */; };
+		44B4666D17A69A6600FE30F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B4666C17A69A6600FE30F7 /* Security.framework */; };
+		44B4667017A6B4A700FE30F7 /* VC_HOME.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4666F17A6B4A700FE30F7 /* VC_HOME.m */; };
+		44B4668517A6D36C00FE30F7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B4668417A6D36C00FE30F7 /* MobileCoreServices.framework */; };
+		44B4668717A6D3B100FE30F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B4668617A6D3B100FE30F7 /* SystemConfiguration.framework */; };
+		44EAE76C17E322ED00DAA130 /* I_TEMP.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE76617E322ED00DAA130 /* I_TEMP.png */; };
+		44EAE76D17E322ED00DAA130 /* I_RAIN.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE76717E322ED00DAA130 /* I_RAIN.png */; };
+		44EAE76E17E322ED00DAA130 /* I_OPEN.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE76817E322ED00DAA130 /* I_OPEN.png */; };
+		44EAE76F17E322ED00DAA130 /* I_HOME.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE76917E322ED00DAA130 /* I_HOME.png */; };
+		44EAE77017E322ED00DAA130 /* I_CLOSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE76A17E322ED00DAA130 /* I_CLOSE.png */; };
+		44EAE77117E322ED00DAA130 /* I_CLOCK.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE76B17E322ED00DAA130 /* I_CLOCK.png */; };
+		44EAE77317E3279D00DAA130 /* I_SHUTTER.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE77217E3279D00DAA130 /* I_SHUTTER.png */; };
+		44EAE77517E327A400DAA130 /* I_HOME_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE77417E327A400DAA130 /* I_HOME_2.png */; };
+		44EAE77917E32D3700DAA130 /* BAR.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE77817E32D3700DAA130 /* BAR.png */; };
+		44EAE77B17E350CB00DAA130 /* ICONA_ARDUINDOW_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE77A17E350CB00DAA130 /* ICONA_ARDUINDOW_57.png */; };
+		44EAE77D17E350D300DAA130 /* ICONA_ARDUINDOW_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAE77C17E350D300DAA130 /* ICONA_ARDUINDOW_114.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		44A8310617A4F06900F3E7C6 /* Arduindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arduindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A8310917A4F06900F3E7C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		44A8310B17A4F06900F3E7C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		44A8310D17A4F06900F3E7C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		44A8311117A4F06900F3E7C6 /* Arduindow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Arduindow-Info.plist"; sourceTree = "<group>"; };
+		44A8311317A4F06900F3E7C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		44A8311517A4F06900F3E7C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		44A8311717A4F06900F3E7C6 /* Arduindow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arduindow-Prefix.pch"; sourceTree = "<group>"; };
+		44A8311817A4F06900F3E7C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		44A8311917A4F06900F3E7C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		44A8311B17A4F06900F3E7C6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		44A8311D17A4F06900F3E7C6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		44A8311F17A4F06900F3E7C6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		44A8312217A4F06900F3E7C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		44B4664E17A6998600FE30F7 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		44B4664F17A6998600FE30F7 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		44B4665017A6998600FE30F7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		44B4665117A6998600FE30F7 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		44B4665217A6998600FE30F7 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		44B4665317A6998600FE30F7 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		44B4665417A6998600FE30F7 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		44B4665517A6998600FE30F7 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		44B4665617A6998600FE30F7 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		44B4665717A6998600FE30F7 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		44B4665817A6998600FE30F7 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		44B4665917A6998600FE30F7 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		44B4665A17A6998600FE30F7 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		44B4665B17A6998600FE30F7 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		44B4665C17A6998600FE30F7 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		44B4665D17A6998600FE30F7 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		44B4665E17A6998600FE30F7 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		44B4665F17A6998600FE30F7 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		44B4666017A6998600FE30F7 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		44B4666C17A69A6600FE30F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		44B4666E17A6B4A700FE30F7 /* VC_HOME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_HOME.h; sourceTree = "<group>"; };
+		44B4666F17A6B4A700FE30F7 /* VC_HOME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_HOME.m; sourceTree = "<group>"; };
+		44B4667117A6B4E800FE30F7 /* ARDUINDOW_HEADER.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARDUINDOW_HEADER.h; sourceTree = "<group>"; };
+		44B4668417A6D36C00FE30F7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		44B4668617A6D3B100FE30F7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		44EAE76617E322ED00DAA130 /* I_TEMP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_TEMP.png; path = ARDUINDOW_IMAGES/I_TEMP.png; sourceTree = "<group>"; };
+		44EAE76717E322ED00DAA130 /* I_RAIN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_RAIN.png; path = ARDUINDOW_IMAGES/I_RAIN.png; sourceTree = "<group>"; };
+		44EAE76817E322ED00DAA130 /* I_OPEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_OPEN.png; path = ARDUINDOW_IMAGES/I_OPEN.png; sourceTree = "<group>"; };
+		44EAE76917E322ED00DAA130 /* I_HOME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_HOME.png; path = ARDUINDOW_IMAGES/I_HOME.png; sourceTree = "<group>"; };
+		44EAE76A17E322ED00DAA130 /* I_CLOSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_CLOSE.png; path = ARDUINDOW_IMAGES/I_CLOSE.png; sourceTree = "<group>"; };
+		44EAE76B17E322ED00DAA130 /* I_CLOCK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_CLOCK.png; path = ARDUINDOW_IMAGES/I_CLOCK.png; sourceTree = "<group>"; };
+		44EAE77217E3279D00DAA130 /* I_SHUTTER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_SHUTTER.png; path = ARDUINDOW_IMAGES/I_SHUTTER.png; sourceTree = "<group>"; };
+		44EAE77417E327A400DAA130 /* I_HOME_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I_HOME_2.png; path = ARDUINDOW_IMAGES/I_HOME_2.png; sourceTree = "<group>"; };
+		44EAE77817E32D3700DAA130 /* BAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BAR.png; path = ARDUINDOW_IMAGES/BAR.png; sourceTree = "<group>"; };
+		44EAE77A17E350CB00DAA130 /* ICONA_ARDUINDOW_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONA_ARDUINDOW_57.png; sourceTree = "<group>"; };
+		44EAE77C17E350D300DAA130 /* ICONA_ARDUINDOW_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONA_ARDUINDOW_114.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44A8310317A4F06900F3E7C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B4668717A6D3B100FE30F7 /* SystemConfiguration.framework in Frameworks */,
+				44B4668517A6D36C00FE30F7 /* MobileCoreServices.framework in Frameworks */,
+				44B4666D17A69A6600FE30F7 /* Security.framework in Frameworks */,
+				44A8310A17A4F06900F3E7C6 /* UIKit.framework in Frameworks */,
+				44A8310C17A4F06900F3E7C6 /* Foundation.framework in Frameworks */,
+				44A8310E17A4F06900F3E7C6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44A830FD17A4F06900F3E7C6 = {
+			isa = PBXGroup;
+			children = (
+				44EAE77C17E350D300DAA130 /* ICONA_ARDUINDOW_114.png */,
+				44EAE77A17E350CB00DAA130 /* ICONA_ARDUINDOW_57.png */,
+				44A8310F17A4F06900F3E7C6 /* Arduindow */,
+				44A8310817A4F06900F3E7C6 /* Frameworks */,
+				44A8310717A4F06900F3E7C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44A8310717A4F06900F3E7C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44A8310617A4F06900F3E7C6 /* Arduindow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44A8310817A4F06900F3E7C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44B4668617A6D3B100FE30F7 /* SystemConfiguration.framework */,
+				44B4668417A6D36C00FE30F7 /* MobileCoreServices.framework */,
+				44B4666C17A69A6600FE30F7 /* Security.framework */,
+				44A8310917A4F06900F3E7C6 /* UIKit.framework */,
+				44A8310B17A4F06900F3E7C6 /* Foundation.framework */,
+				44A8310D17A4F06900F3E7C6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44A8310F17A4F06900F3E7C6 /* Arduindow */ = {
+			isa = PBXGroup;
+			children = (
+				44A8311817A4F06900F3E7C6 /* AppDelegate.h */,
+				44A8311917A4F06900F3E7C6 /* AppDelegate.m */,
+				44A8312117A4F06900F3E7C6 /* MainStoryboard.storyboard */,
+				44B4666E17A6B4A700FE30F7 /* VC_HOME.h */,
+				44B4666F17A6B4A700FE30F7 /* VC_HOME.m */,
+				44EAE75917E3206900DAA130 /* ARDUINDOW_IMAGES */,
+				44B4667117A6B4E800FE30F7 /* ARDUINDOW_HEADER.h */,
+				44B4664D17A6998600FE30F7 /* AFNetworking */,
+				44A8311017A4F06900F3E7C6 /* Supporting Files */,
+			);
+			path = Arduindow;
+			sourceTree = "<group>";
+		};
+		44A8311017A4F06900F3E7C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44A8311117A4F06900F3E7C6 /* Arduindow-Info.plist */,
+				44A8311217A4F06900F3E7C6 /* InfoPlist.strings */,
+				44A8311517A4F06900F3E7C6 /* main.m */,
+				44A8311717A4F06900F3E7C6 /* Arduindow-Prefix.pch */,
+				44A8311B17A4F06900F3E7C6 /* Default.png */,
+				44A8311D17A4F06900F3E7C6 /* Default@2x.png */,
+				44A8311F17A4F06900F3E7C6 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44B4664D17A6998600FE30F7 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				44B4664E17A6998600FE30F7 /* AFHTTPClient.h */,
+				44B4664F17A6998600FE30F7 /* AFHTTPClient.m */,
+				44B4665017A6998600FE30F7 /* AFHTTPRequestOperation.h */,
+				44B4665117A6998600FE30F7 /* AFHTTPRequestOperation.m */,
+				44B4665217A6998600FE30F7 /* AFImageRequestOperation.h */,
+				44B4665317A6998600FE30F7 /* AFImageRequestOperation.m */,
+				44B4665417A6998600FE30F7 /* AFJSONRequestOperation.h */,
+				44B4665517A6998600FE30F7 /* AFJSONRequestOperation.m */,
+				44B4665617A6998600FE30F7 /* AFNetworkActivityIndicatorManager.h */,
+				44B4665717A6998600FE30F7 /* AFNetworkActivityIndicatorManager.m */,
+				44B4665817A6998600FE30F7 /* AFNetworking.h */,
+				44B4665917A6998600FE30F7 /* AFPropertyListRequestOperation.h */,
+				44B4665A17A6998600FE30F7 /* AFPropertyListRequestOperation.m */,
+				44B4665B17A6998600FE30F7 /* AFURLConnectionOperation.h */,
+				44B4665C17A6998600FE30F7 /* AFURLConnectionOperation.m */,
+				44B4665D17A6998600FE30F7 /* AFXMLRequestOperation.h */,
+				44B4665E17A6998600FE30F7 /* AFXMLRequestOperation.m */,
+				44B4665F17A6998600FE30F7 /* UIImageView+AFNetworking.h */,
+				44B4666017A6998600FE30F7 /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = "AFNetworking-master/AFNetworking";
+			sourceTree = "<group>";
+		};
+		44EAE75917E3206900DAA130 /* ARDUINDOW_IMAGES */ = {
+			isa = PBXGroup;
+			children = (
+				44EAE77417E327A400DAA130 /* I_HOME_2.png */,
+				44EAE76617E322ED00DAA130 /* I_TEMP.png */,
+				44EAE76717E322ED00DAA130 /* I_RAIN.png */,
+				44EAE76817E322ED00DAA130 /* I_OPEN.png */,
+				44EAE77217E3279D00DAA130 /* I_SHUTTER.png */,
+				44EAE76917E322ED00DAA130 /* I_HOME.png */,
+				44EAE76A17E322ED00DAA130 /* I_CLOSE.png */,
+				44EAE76B17E322ED00DAA130 /* I_CLOCK.png */,
+				44EAE77817E32D3700DAA130 /* BAR.png */,
+			);
+			name = ARDUINDOW_IMAGES;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44A8310517A4F06900F3E7C6 /* Arduindow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A8312917A4F06900F3E7C6 /* Build configuration list for PBXNativeTarget "Arduindow" */;
+			buildPhases = (
+				44A8310217A4F06900F3E7C6 /* Sources */,
+				44A8310317A4F06900F3E7C6 /* Frameworks */,
+				44A8310417A4F06900F3E7C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arduindow;
+			productName = Arduindow;
+			productReference = 44A8310617A4F06900F3E7C6 /* Arduindow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44A830FE17A4F06900F3E7C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Raviola Giorgio";
+			};
+			buildConfigurationList = 44A8310117A4F06900F3E7C6 /* Build configuration list for PBXProject "Arduindow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 44A830FD17A4F06900F3E7C6;
+			productRefGroup = 44A8310717A4F06900F3E7C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44A8310517A4F06900F3E7C6 /* Arduindow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44A8310417A4F06900F3E7C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A8311417A4F06900F3E7C6 /* InfoPlist.strings in Resources */,
+				44A8311C17A4F06900F3E7C6 /* Default.png in Resources */,
+				44A8311E17A4F06900F3E7C6 /* Default@2x.png in Resources */,
+				44A8312017A4F06900F3E7C6 /* Default-568h@2x.png in Resources */,
+				44A8312317A4F06900F3E7C6 /* MainStoryboard.storyboard in Resources */,
+				44EAE76C17E322ED00DAA130 /* I_TEMP.png in Resources */,
+				44EAE76D17E322ED00DAA130 /* I_RAIN.png in Resources */,
+				44EAE76E17E322ED00DAA130 /* I_OPEN.png in Resources */,
+				44EAE76F17E322ED00DAA130 /* I_HOME.png in Resources */,
+				44EAE77017E322ED00DAA130 /* I_CLOSE.png in Resources */,
+				44EAE77117E322ED00DAA130 /* I_CLOCK.png in Resources */,
+				44EAE77317E3279D00DAA130 /* I_SHUTTER.png in Resources */,
+				44EAE77517E327A400DAA130 /* I_HOME_2.png in Resources */,
+				44EAE77917E32D3700DAA130 /* BAR.png in Resources */,
+				44EAE77B17E350CB00DAA130 /* ICONA_ARDUINDOW_57.png in Resources */,
+				44EAE77D17E350D300DAA130 /* ICONA_ARDUINDOW_114.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44A8310217A4F06900F3E7C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A8311617A4F06900F3E7C6 /* main.m in Sources */,
+				44A8311A17A4F06900F3E7C6 /* AppDelegate.m in Sources */,
+				44B4666117A6998600FE30F7 /* AFHTTPClient.m in Sources */,
+				44B4666217A6998600FE30F7 /* AFHTTPRequestOperation.m in Sources */,
+				44B4666317A6998600FE30F7 /* AFImageRequestOperation.m in Sources */,
+				44B4666417A6998600FE30F7 /* AFJSONRequestOperation.m in Sources */,
+				44B4666517A6998600FE30F7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				44B4666617A6998600FE30F7 /* AFPropertyListRequestOperation.m in Sources */,
+				44B4666717A6998600FE30F7 /* AFURLConnectionOperation.m in Sources */,
+				44B4666817A6998600FE30F7 /* AFXMLRequestOperation.m in Sources */,
+				44B4666917A6998600FE30F7 /* UIImageView+AFNetworking.m in Sources */,
+				44B4667017A6B4A700FE30F7 /* VC_HOME.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		44A8311217A4F06900F3E7C6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44A8311317A4F06900F3E7C6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		44A8312117A4F06900F3E7C6 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44A8312217A4F06900F3E7C6 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44A8312717A4F06900F3E7C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		44A8312817A4F06900F3E7C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44A8312A17A4F06900F3E7C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Arduindow/Arduindow-Prefix.pch";
+				INFOPLIST_FILE = "Arduindow/Arduindow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		44A8312B17A4F06900F3E7C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Arduindow/Arduindow-Prefix.pch";
+				INFOPLIST_FILE = "Arduindow/Arduindow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44A8310117A4F06900F3E7C6 /* Build configuration list for PBXProject "Arduindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A8312717A4F06900F3E7C6 /* Debug */,
+				44A8312817A4F06900F3E7C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A8312917A4F06900F3E7C6 /* Build configuration list for PBXNativeTarget "Arduindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A8312A17A4F06900F3E7C6 /* Debug */,
+				44A8312B17A4F06900F3E7C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44A830FE17A4F06900F3E7C6 /* Project object */;
+}
