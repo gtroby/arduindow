@@ -48,6 +48,11 @@ const int REQUEST_DELAY = 5000;
 //
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
+//
+// Boolean. If false (0) Arduino wont print informations on serial port
+//
+const int SERIAL_PRINT = 0;
+
 /////////////////////////////////////////
 // END USER SETTINGS
 /////////////////////////////////////////
@@ -72,8 +77,11 @@ void setup()
   pinMode(led, OUTPUT);
   pinMode(servo, OUTPUT);
 
-  Serial.begin(9600);
-  Serial.print("Starting serial monitor...\n");
+  if(SERIAL_PRINT)
+  {
+    Serial.begin(9600);
+    Serial.print("Starting serial monitor...\n");
+  }
 
   Ethernet.begin(mac, ip, gateway, submask);
 
@@ -82,7 +90,8 @@ void setup()
   // If you have connection problems, try with an higher delay.
   //
   delay(3000);
-  Serial.println("Connecting...\n");
+  if(SERIAL_PRINT)
+    Serial.println("Connecting...\n");
 }
 
 void loop()
@@ -90,7 +99,8 @@ void loop()
   digitalWrite(led, 170);
 
   if (client.connect(server, 80)) {
-    Serial.println("Connection accepted!\n");
+    if(SERIAL_PRINT)
+        Serial.println("Connection accepted!\n");
 
     //
     // Send the request to the server
@@ -105,7 +115,8 @@ void loop()
     request();
   }
   else {
-    Serial.println("Connection failed!\n");
+    if(SERIAL_PRINT)
+        Serial.println("Connection failed!\n");
   }
 
   client.stop();
@@ -122,7 +133,8 @@ int request()
   do {
     if (client.available()) {
       char c = client.read();
-      Serial.print(c);
+      if(SERIAL_PRINT)
+        Serial.print(c);
       buffer[i] = c;
       i++;
       if(i >= DIM_BUFFER)
@@ -131,8 +143,11 @@ int request()
 
     // If the server closed the connection
     if (!client.connected()) {
-      Serial.println();
-      Serial.println("\n\nServer disconnected");
+      if(SERIAL_PRINT)
+      {
+        Serial.println();
+        Serial.println("\n\nServer disconnected");
+      }
       go_on = 0;
     }
   } while(go_on);
@@ -175,8 +190,11 @@ int request()
   read_value = 10 * (buffer[i] - '0') + (buffer[i + 1] - '0');
 
   // TODO: maybe use snprintf()?
-  sprintf(stringa, "Value read: %d\n", read_value);
-  Serial.print(stringa);
+  if(SERIAL_PRINT)
+  {
+    sprintf(stringa, "Value read: %d\n", read_value);
+    Serial.print(stringa);
+  }
 
   digitalWrite(led, LOW);
   analogWrite(servo, read_value * 2.55);
