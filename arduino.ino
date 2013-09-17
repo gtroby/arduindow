@@ -48,6 +48,11 @@ const int REQUEST_DELAY = 5000;
 //
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
+//
+// Boolean. If false (0) Arduino wont print informations on serial port
+//
+const int SERIAL_PRINT = 0;
+
 /////////////////////////////////////////
 // END USER SETTINGS
 /////////////////////////////////////////
@@ -72,8 +77,11 @@ void setup()
   pinMode(led, OUTPUT);
   pinMode(servo, OUTPUT);
 
-  Serial.begin(9600);
-  Serial.print("Starting serial monitor...\n");
+  if(SERIAL_PRINT)
+  {
+    Serial.begin(9600);
+    Serial.print("Starting serial monitor...\n");
+  }
 
   Ethernet.begin(mac, ip, gateway, submask);
 
@@ -82,7 +90,8 @@ void setup()
   // If you have connection problems, try with an higher delay.
   //
   delay(3000);
-  Serial.println("Connecting...\n");
+  if(SERIAL_PRINT)
+    Serial.println("Connecting...\n");
 }
 
 void loop()
@@ -90,7 +99,8 @@ void loop()
   digitalWrite(led, 170);
 
   if (client.connect(server, 80)) {
-    Serial.println("Connection accepted!\n");
+    if(SERIAL_PRINT)
+        Serial.println("Connection accepted!\n");
 
     //
     // Send the request to the server
@@ -105,7 +115,8 @@ void loop()
     request();
   }
   else {
-    Serial.println("Connection failed!\n");
+    if(SERIAL_PRINT)
+        Serial.println("Connection failed!\n");
   }
 
   client.stop();
@@ -117,27 +128,35 @@ int request()
 {
   int i = 0;
   char stringa[256];
-  int continua = 1;
+  int go_on = 1;
 
   do {
     if (client.available()) {
       char c = client.read();
-      Serial.print(c);
+      if(SERIAL_PRINT)
+        Serial.print(c);
       buffer[i] = c;
       i++;
       if(i >= DIM_BUFFER)
-        continua = 0;
+        go_on = 0;
     }
 
     // If the server closed the connection
     if (!client.connected()) {
-      Serial.println();
-      Serial.println("\n\nServer disconnected");
-      continua = 0;
+      if(SERIAL_PRINT)
+      {
+        Serial.println();
+        Serial.println("\n\nServer disconnected");
+      }
+      go_on = 0;
     }
-  } while(continua);
+  } while(go_on);
 
-  if(i < 13)
+  //
+  // Don't bother checking, when the string we
+  // read from the server is too short.
+  //
+  if (i < 13)
     return 1;
 
   dim = i;
@@ -147,25 +166,35 @@ int request()
   if (memcmp(buffer, "HTTP/1.1 200", 12))
     return 1;
 
-  continua = 1;
+  //
+  // Quickly skip a the end of the request headers, by
+  // looking for [\r\n]{4}. We assume that the server
+  // is not using the non-standard LFLF terminator for
+  // the headers, which is a sound assumption.
+  //
+  go_on = 1;
   n = 0;
-  while(continua) {
+  while (go_on) {
     if (buffer[i] == '\n' || buffer[i] == '\r')
       n++;
     else
       n = 0;
-    if(n == 4 || i == DIM_BUFFER)
-      continua=0;
+    if (n == 4 || i == DIM_BUFFER)
+      go_on = 0;
     i++;
   }
 
-  if(i>DIM_BUFFER-1) return 1;
-  
+  if (i > DIM_BUFFER - 1)
+    return 1;
+
   read_value = 10 * (buffer[i] - '0') + (buffer[i + 1] - '0');
 
   // TODO: maybe use snprintf()?
-  sprintf(stringa, "Value read: %d\n", read_value);
-  Serial.print(stringa);
+  if(SERIAL_PRINT)
+  {
+    sprintf(stringa, "Value read: %d\n", read_value);
+    Serial.print(stringa);
+  }
 
   digitalWrite(led, LOW);
   analogWrite(servo, read_value * 2.55);
