@@ -209,7 +209,7 @@ int request()
   digitalWrite(led, LOW);
   read_value=(read_value*(OPEN-CLOSE)/100)+CLOSE;
   
-  if(read_value >= CLOSE && read_value <= CLOSE)
+  if(read_value >= CLOSE && read_value <= OPEN)
      set_servo(read_value);
 
   return 0;
