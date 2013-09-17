@@ -15,6 +15,7 @@
 
 #include <SPI.h>
 #include <Ethernet.h>
+#include <Servo.h> 
 
 /////////////////////////////////////////
 // BEGIN USER SETTINGS
@@ -46,12 +47,19 @@ const int REQUEST_DELAY = 5000;
 //
 // The MAC address of the Ethernet-Shield
 //
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+byte mac[] = { 
+  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
 //
 // Boolean. If false (0) Arduino wont print informations on serial port
 //
-const int SERIAL_PRINT = 0;
+const int SERIAL_PRINT = 1;
+
+//
+// Servo config
+//
+const int CLOSE = 2;
+const int OPEN = 135;
 
 /////////////////////////////////////////
 // END USER SETTINGS
@@ -60,6 +68,7 @@ const int SERIAL_PRINT = 0;
 const int DIM_BUFFER = 1000;
 
 EthernetClient client;
+Servo myServo;
 
 char buffer[DIM_BUFFER + 1];
 int n = 0,
@@ -75,7 +84,8 @@ const int led = 3,
 void setup()
 {
   pinMode(led, OUTPUT);
-  pinMode(servo, OUTPUT);
+  myServo.attach(servo);
+  myServo.write(CLOSE);
 
   if(SERIAL_PRINT)
   {
@@ -96,11 +106,11 @@ void setup()
 
 void loop()
 {
-  digitalWrite(led, 170);
+  digitalWrite(led, HIGH);
 
   if (client.connect(server, 80)) {
     if(SERIAL_PRINT)
-        Serial.println("Connection accepted!\n");
+      Serial.println("Connection accepted!\n");
 
     //
     // Send the request to the server
@@ -116,7 +126,7 @@ void loop()
   }
   else {
     if(SERIAL_PRINT)
-        Serial.println("Connection failed!\n");
+      Serial.println("Connection failed!\n");
   }
 
   client.stop();
@@ -150,7 +160,8 @@ int request()
       }
       go_on = 0;
     }
-  } while(go_on);
+  } 
+  while(go_on);
 
   //
   // Don't bother checking, when the string we
@@ -189,15 +200,35 @@ int request()
 
   read_value = 10 * (buffer[i] - '0') + (buffer[i + 1] - '0');
 
-  // TODO: maybe use snprintf()?
   if(SERIAL_PRINT)
   {
-    sprintf(stringa, "Value read: %d\n", read_value);
+    snprintf(stringa, 100, "Value read: %d\n", read_value);
     Serial.print(stringa);
   }
 
   digitalWrite(led, LOW);
-  analogWrite(servo, read_value * 2.55);
+  read_value=(read_value*(OPEN-CLOSE)/100)+CLOSE;
+  
+  if(read_value >= CLOSE && read_value <= CLOSE)
+     set_servo(read_value);
 
   return 0;
+}
+
+void set_servo(int value)
+{
+  int pos = myServo.read();
+  if(pos < value)
+    while(pos < value)
+    {
+      myServo.write(++pos);
+      delay(9);
+    }
+      
+  if(pos > value)
+    while(pos > value)
+    {
+      myServo.write(--pos);
+      delay(9);
+    }
 }
